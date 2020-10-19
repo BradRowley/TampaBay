@@ -9,4 +9,184 @@ html {
 body {
   margin: 0;
   min-height: 100%;
+  background-color: #191970;
+  color: #e0ffff;
+}
+//***Not very good. need a change in color from the body background.looks like a damn pizza menu***////
+header {
+  background-color: #191970;
+  color: #e0ffff;
+}
+header ul {
+  list-style-type: none;
+}
+.header {
+  margin-top: 10px;
+  font-size: 12px;
+  margin-left: -30px;
+}
+.picture {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  justify-self: center;
+  // border-radius: 8px;
+  // box-shadow: 4px 4px 1rem;
+}
+.picture2 {
+  display: none;
+}
+.picture3 {
+  display: none;
+}
+img {
+  width: 220px;
+  height: 150px;
+  padding-left: 80px;
+}
+
+article h2 {
+  color: #e0ffff;
+  font-family: 'Stencil Std', fantasy;
+  display: flex;
+  justify-content: center;
+  font-size: 2.5rem;
+}
+.search input {
+  outline: 3px solid #afeeee;
+}
+article h3 {
+  display: flex;
+  justify-content: space-between;
+}
+.buttonlabel {
+  display: none;
+}
+.button {
+  margin-left: 27px;
+  outline: 3px solid #afeeee;
+  height: 25px;
+}
+.label {
+  display: none;
+}
+.dropdown {
+  margin-right: 15px;
+}
+section ul {
+  list-style-type: none;
+}
+section ul li {
+  border-bottom: 2px dotted #afeeee;
+  margin-top: 10px;
+}
+section h4 {
+  margin-bottom: -5px;
+}
+//****** Need to figure out why this hover isnt working *******//
+
+// section h4:hover {
+//   color: red;
+// }
+section p {
+  margin-left: 1px;
+}
+@media screen and (min-width: 650px) {
+  .picture {
+    display: grid;
+    margin-left: -20px;
+  }
+  .picture2 {
+    display: grid;
+    margin-left: -50px;
+  }
+  .headerpictures {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .label {
+    display: flex;
+    margin-top: -20px;
+    margin-bottom: 5px;
+  }
+  .buttonlabel {
+    display: flex;
+    margin-top: -20px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+  }
+  .search input {
+    margin-right: 20px;
+    width: 250px;
+    height: 18px;
+  }
+  .button {
+    margin-left: 53px;
+  }
+  img {
+    width: 250px;
+    height: 180px;
+  }
+  article h2 {
+    font-size: 3.5rem;
+    padding-bottom: 10px;
+    margin-top: -18px;
+  }
+  .dropdown {
+    height: 20px;
+  }
+}
+@media screen and (min-width: 760px) {
+  header li {
+    font-size: 14px;
+  }
+
+  img {
+    width: 300px;
+    height: 180px;
+  }
+  .buttonlabel {
+    margin-left: 13px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  img {
+    width: 400px;
+    height: 190px;
+  }
+}
+@media screen and (min-width: 1250px) {
+  .picture {
+    margin-left: 22px;
+  }
+}
+.picture2 {
+  margin-left: 22px;
+}
+@media screen and (min-width: 1300px) {
+  header li {
+    font-size: 15px;
+  }
+
+  img {
+    width: 330px;
+    height: 200px;
+  }
+  .headerpictures {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .picture2 {
+    margin-left: 0px;
+  }
+  .picture3 {
+    display: grid;
+  }
+  article h2 {
+    margin-top: 36px;
+    font-size: 4rem;
+  }
+  .search {
+    margin-bottom: 10px;
+  }
 }
