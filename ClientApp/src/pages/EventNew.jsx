@@ -3,6 +3,11 @@ import React from 'react'
 export function EventNew() {
   return (
     <>
+    <header>
+        <ul className="header">
+          <li>Welcome,</li>
+        </ul>
+      </header>
       <main>
         <form action="#">
           <p className="formsinput">

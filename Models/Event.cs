@@ -1,4 +1,5 @@
 namespace TampaBay.Models
+
 {
     public class Event
     {
