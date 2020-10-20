@@ -6,6 +6,7 @@ import tampaBay3 from './pictures/tampa 3.jpeg'
 export function App() {
   return (
     <>
+    {/* need to improve header */}
       <header>
         <ul className="header">
           <li>Welcome,</li>

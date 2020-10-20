@@ -4,6 +4,11 @@ import React from 'react'
 export function SignOn() {
   return (
     <>
+     <header>
+        <ul className="header">
+          <li>Welcome,</li>
+        </ul>
+      </header>
     <main>
           <h1>Sign In!!!</h1>
         <form action="#">

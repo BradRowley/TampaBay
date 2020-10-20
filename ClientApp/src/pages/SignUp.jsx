@@ -3,6 +3,11 @@ import React from 'react'
 export function SignUp() {
   return (
     <>
+     <header>
+        <ul className="header">
+          <li>Welcome,</li>
+        </ul>
+      </header>
          <main>
           <h1>Sign Up!!!</h1>
         <form action="#">
