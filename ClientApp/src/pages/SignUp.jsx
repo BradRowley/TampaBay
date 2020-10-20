@@ -4,7 +4,7 @@ export function SignUp() {
   return (
     <>
          <main>
-          <h2>Sign Up</h2>
+          <h1>Sign Up!!!</h1>
         <form action="#">
           <p className="form-input">
             <label htmlFor="name">Email</label>

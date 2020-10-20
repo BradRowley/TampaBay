@@ -5,7 +5,7 @@ export function SignOn() {
   return (
     <>
     <main>
-          <h2>Sign In</h2>
+          <h1>Sign In!!!</h1>
         <form action="#">
           <p className="form-input">
             <label htmlFor="name">Email</label>
@@ -19,6 +19,10 @@ export function SignOn() {
             <input type="submit" value="Submit" />
           </p>
         </form>
+      {/* need to make footer for page */}
+        <footer>
+
+        </footer>
       </main>
       
     </>
