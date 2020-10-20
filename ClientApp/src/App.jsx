@@ -11,19 +11,11 @@ export function App() {
         <ul className="header">
           <li>Welcome,</li>
         </ul>
+        <nav>
+          
+        </nav>
       </header>
       <main>
-        <article className="headerpictures">
-          <h1>
-            <img className="picture" src={tampaBay2} alt="Tampa Picture2" />
-          </h1>
-          <h1>
-            <img className="picture2" src={tampaBay1} alt="Tampa Picture1" />
-          </h1>
-          <h1>
-            <img className="picture3" src={tampaBay3} alt="Tampa Picture3" />
-          </h1>
-        </article>
         <article>
           <h2>Tampa Bay's Best</h2>
           <h3>
@@ -67,6 +59,20 @@ export function App() {
           </ul>
         </section>
       </main>
+      <footer>
+      <article className="headerpictures">
+          <h1>
+            <img className="picture" src={tampaBay2} alt="Tampa Picture2" />
+          </h1>
+          <h1>
+            <img className="picture2" src={tampaBay1} alt="Tampa Picture1" />
+          </h1>
+          <h1>
+            <img className="picture3" src={tampaBay3} alt="Tampa Picture3" />
+          </h1>
+        </article>
+
+      </footer>
     </>
   )
 }
