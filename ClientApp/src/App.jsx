@@ -26,7 +26,7 @@ export function App() {
           <h2 className="title" >Tampa Bay's Best</h2>
           <h3>
             <div>
-              <label className="buttonlabel">Add New Event:</label>
+              <label className="buttonlabel">Sign On:</label>
               <input className="button" type="button" value="+" />
             </div>
             <form className="search">
