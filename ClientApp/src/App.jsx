@@ -12,12 +12,18 @@ export function App() {
           <li>Welcome,</li>
         </ul>
         <nav>
-          
+        <div>Home</div>
+        <div>
+          Add Event
+              {/* <label className="buttonlabel">Add New Event:</label>
+              <input className="button" type="button" value="+" /> */}
+            </div>
+        <div>Budget</div>
         </nav>
       </header>
       <main>
         <article>
-          <h2>Tampa Bay's Best</h2>
+          <h2 className="title" >Tampa Bay's Best</h2>
           <h3>
             <div>
               <label className="buttonlabel">Add New Event:</label>
@@ -60,7 +66,7 @@ export function App() {
         </section>
       </main>
       <footer>
-      <article className="headerpictures">
+      {/* <article className="headerpictures">
           <h1>
             <img className="picture" src={tampaBay2} alt="Tampa Picture2" />
           </h1>
@@ -70,7 +76,7 @@ export function App() {
           <h1>
             <img className="picture3" src={tampaBay3} alt="Tampa Picture3" />
           </h1>
-        </article>
+        </article> */}
 
       </footer>
     </>
