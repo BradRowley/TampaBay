@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './custom.scss'
 import tampaBay1 from './pictures/tampa 1.jpg'
 import tampaBay2 from './pictures/tampa 2.jpg'
 import tampaBay3 from './pictures/tampa 3.jpeg'
+
 export function App() {
+  const [events, setEvents] = useState([])
+  useEffect(function(){
+    async function fixAsyncError(){
+    const response = await fetch('/api/events')
+    const json =await response.json()
+    setEvents(json)
+    }
+    fixAsyncError()
+  }, [])
   return (
     <>
     {/* need to improve header */}
@@ -26,7 +36,7 @@ export function App() {
           <h2 className="title" >Tampa Bay's Best</h2>
           <h3>
             <div>
-              <label className="buttonlabel">Sign On:</label>
+              <label className="buttonlabel">Sign Out:</label>
               <input className="button" type="button" value="+" />
             </div>
             <form className="search">
@@ -47,26 +57,18 @@ export function App() {
         </article>
         <section>
           <ul>
-            <li>
-              <h4>Bob's Burgers</h4>
-              <p>Category: Food</p>
-              <address>9100 Tampa Rd, Tampa, FL 33634</address>
+          {events.map((event)=> (
+            <li key={event.id}>
+              <h4>{event.name}</h4>
+              <p>{event.category}</p>
+              <address>{event.address}</address>
             </li>
-            <li>
-              <h4>Rowdys</h4>
-              <p>Category: Night life</p>
-              <address>1000 Roosevelt Blvd, Clearwater, FL 33760</address>
-            </li>
-            <li>
-              <h4>Shady Swings</h4>
-              <p>Category: Outdoors </p>
-              <address>1002 Jensen Rd, Clearwater, FL 33760</address>
-            </li>
+            ))}
           </ul>
         </section>
       </main>
-      <footer>
-      {/* <article className="headerpictures">
+      {/* <footer>
+      <article className="headerpictures">
           <h1>
             <img className="picture" src={tampaBay2} alt="Tampa Picture2" />
           </h1>
@@ -76,9 +78,9 @@ export function App() {
           <h1>
             <img className="picture3" src={tampaBay3} alt="Tampa Picture3" />
           </h1>
-        </article> */}
+        </article>
 
-      </footer>
+      </footer> */}
     </>
   )
 }
