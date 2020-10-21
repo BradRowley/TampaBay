@@ -6,14 +6,16 @@ import tampaBay3 from './pictures/tampa 3.jpeg'
 
 export function App() {
   const [events, setEvents] = useState([])
+  const [filterText, setFilterText] = useState('')
   useEffect(function(){
     async function fixAsyncError(){
-    const response = await fetch('/api/events')
+      const url = `/api/events?filter=${filterText}`
+    const response = await fetch(url)
     const json =await response.json()
     setEvents(json)
     }
     fixAsyncError()
-  }, [])
+  }, [filterText,])
   return (
     <>
     {/* need to improve header */}
@@ -39,9 +41,16 @@ export function App() {
               <label className="buttonlabel">Sign Out:</label>
               <input className="button" type="button" value="+" />
             </div>
-            <form className="search">
-              <input type="text" placeholder="Search..." />
-            </form>
+            <form className="searchbutton">
+          <input
+            type="text"
+            placeholder="Search..."
+            value={filterText}
+            onChange={function (event) {
+              setFilterText(event.target.value)
+            }}
+          />
+        </form>
 
             <div>
               {/* <label for="cars">Category:</label> */}
