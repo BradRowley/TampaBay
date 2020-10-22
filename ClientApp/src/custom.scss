@@ -210,3 +210,22 @@ section p {
     margin-bottom: 10px;
   }
 }
+.eventForm .note {
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+.eventForm {
+  display: flex;
+  flex-direction: column;
+}
+.form-input input[type='text'],
+.form-input input[type='tel'],
+.form-input input[type='email'],
+.form-input input[type='password'],
+.form-input input[type='file'],
+.form-input textarea {
+  font-family: 'Inika', serif;
+  font-size: 1.2rem;
+  padding: 0.5rem 0;
+  margin: 0.5rem 0;
+}
