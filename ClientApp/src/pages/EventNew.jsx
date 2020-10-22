@@ -67,13 +67,14 @@ console.log(json)
             <label htmlFor="name">Address</label>
             <textarea name="address" value={newEvent.address} onChange = {fieldChange}></textarea>
           </p>
+          {/* Having issues having the dropdown being saved */}
           <p>
           <select className="dropdown2">
-                <option value="">Select Category</option>
-                <option value={newEvent.category}>Food</option>
-                <option value={newEvent.category}>Night Life</option>
-                <option value={newEvent.category}>Outdoors</option>
-                <option value={newEvent.category}>Other</option>
+                <option value={newEvent.category} onChange = {fieldChange} >Select Category</option>
+                <option value={newEvent.category} onChange = {fieldChange}>Food</option>
+                <option value={newEvent.category} onChange = {fieldChange}>Night Life</option>
+                <option value={newEvent.category} onChange = {fieldChange}>Outdoors</option>
+                <option value={newEvent.category} onChange = {fieldChange}>Other</option>
               </select>
           </p>
           <p>
