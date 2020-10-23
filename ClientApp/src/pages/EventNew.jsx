@@ -3,6 +3,8 @@ import { useHistory } from 'react-router-dom'
 
 export function EventNew() {
 
+const[error,setError] = useState()
+
   const [newEvent, setNewEvent] = useState({
     name: '',
     description: '',
@@ -38,9 +40,16 @@ const r = await fetch(
 }
 )
 const json = await r.json()
-console.log(json)
+
+if(r.status === 400){
+  const message = Object.values(json.errors).join(' ')
+  setError(message)
+} else{
+
 history.push('/')
 }
+}
+
   return (
     <>
     <header>
@@ -50,6 +59,8 @@ history.push('/')
       </header>
       <main>
         <form onSubmit={submitButton}>
+         {error && <p>The Name and Category sections are REQUIRED</p>}
+
           <p className="eventForm">
             <label htmlFor="name">Name</label>
             <input type="text" name="name" value={newEvent.name} onChange = {fieldChange}/>
