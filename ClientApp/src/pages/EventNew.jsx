@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 
 export function EventNew() {
 
@@ -10,6 +11,8 @@ export function EventNew() {
     cost: '',
     address: '',
   })
+
+  const history = useHistory()
   //updates field's//
 function fieldChange(event){
 const value = event.target.value
@@ -36,6 +39,7 @@ const r = await fetch(
 )
 const json = await r.json()
 console.log(json)
+history.push('/')
 }
   return (
     <>

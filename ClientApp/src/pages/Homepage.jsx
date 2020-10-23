@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 // import tampaBay1 from './pictures/tampa 1.jpg'
 // import tampaBay2 from './pictures/tampa 2.jpg'
 // import tampaBay3 from './pictures/tampa 3.jpeg'
@@ -24,11 +25,9 @@ export function Homepage() {
         </ul>
         <nav>
         <div>Home</div>
-        <div>
-          Add Event
-              {/* <label className="buttonlabel">Add New Event:</label>
-              <input className="button" type="button" value="+" /> */}
-            </div>
+          <Link to="/new">
+        <div> Add Event </div>
+        </Link>
         <div>Budget</div>
         </nav>
       </header>
