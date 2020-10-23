@@ -6,6 +6,8 @@ import { Switch, Route} from 'react-router-dom'
 // import tampaBay3 from './pictures/tampa 3.jpeg'
 import { Homepage } from './pages/Homepage'
 import { EventNew } from './pages/EventNew'
+import { OneEvent } from './pages/OneEvent'
+
 
 export function App() {
   return (
@@ -15,6 +17,9 @@ export function App() {
       </Route>
       <Route exact path="/new">
         <EventNew />
+      </Route>
+      <Route exact path="/events/:id">
+        <OneEvent/>
       </Route>
     </Switch>
   )

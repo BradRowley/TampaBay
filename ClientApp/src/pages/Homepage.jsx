@@ -30,6 +30,7 @@ export function Homepage() {
         </Link>
         <div>Budget</div>
         </nav>
+        <hr />
       </header>
       <main>
         <article>
@@ -52,8 +53,9 @@ export function Homepage() {
 
             <div>
               {/* <label for="cars">Category:</label> */}
-              <label className="label">Category:</label>
+              
               <select className="dropdown">
+              <option value="">Select Category</option>
                 <option value="food">Food</option>
                 <option value="nightlife">Night Life</option>
                 <option value="outdoors">Outdoors</option>

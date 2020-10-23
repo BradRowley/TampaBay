@@ -59,7 +59,7 @@ history.push('/')
       </header>
       <main>
         <form onSubmit={submitButton}>
-         {error && <p>The Name and Category sections are REQUIRED</p>}
+         {error && <p>**The Name and Category sections are REQUIRED**</p>}
 
           <p className="eventForm">
             <label htmlFor="name">Name</label>
