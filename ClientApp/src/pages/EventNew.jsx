@@ -71,10 +71,10 @@ console.log(json)
           <p>
           <select className="dropdown2">
                 <option value={newEvent.category} onChange = {fieldChange} >Select Category</option>
-                <option value={newEvent.category} onChange = {fieldChange}>Food</option>
-                <option value={newEvent.category} onChange = {fieldChange}>Night Life</option>
-                <option value={newEvent.category} onChange = {fieldChange}>Outdoors</option>
-                <option value={newEvent.category} onChange = {fieldChange}>Other</option>
+                <option value={newEvent.category="Food"} onChange = {fieldChange}>Food</option>
+                <option value={newEvent.category="Night Life"} onChange = {fieldChange}>Night Life</option>
+                <option value={newEvent.category="Outdoors"} onChange = {fieldChange}>Outdoors</option>
+                <option value={newEvent.category="Other"} onChange = {fieldChange}>Other</option>
               </select>
           </p>
           <p>
