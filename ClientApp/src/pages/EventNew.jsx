@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
 export function EventNew() {
 
@@ -52,12 +52,20 @@ history.push('/')
 
   return (
     <>
-    <header>
-        <ul className="header">
+    <header className="header">
+        <ul>
           <li>Welcome,</li>
         </ul>
+        <nav>
+        <Link to="/">
+        <div> Home </div>
+        </Link>
+        </nav>
       </header>
+      <hr />
       <main>
+<h1>Add Event</h1>
+
         <form onSubmit={submitButton}>
          {error && <p>**The Name and Category sections are REQUIRED**</p>}
 
@@ -82,7 +90,6 @@ history.push('/')
             <label htmlFor="name">Address</label>
             <textarea name="address" value={newEvent.address} onChange = {fieldChange}></textarea>
           </p>
-          {/* Having issues having the dropdown being saved */}
           <p>
           <select className="dropdown2">
                 <option value={newEvent.category} onChange = {fieldChange} >Select Category</option>

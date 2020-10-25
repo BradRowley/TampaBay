@@ -20,17 +20,24 @@ body {
 header {
   color: #e0ffff;
 }
-header ul {
+header div {
   list-style-type: none;
+  margin-bottom: 10px;
 }
 header nav {
   display: flex;
   justify-content: flex-end;
+  margin-left: 65rem;
 }
 .header {
   margin-top: 10px;
-  font-size: 12px;
-  margin-left: -30px;
+  font-size: 15px;
+  // margin-left: -30px;
+  display: flex;
+  justify-content: space-between;
+}
+hr {
+  margin-bottom: 2rem;
 }
 .picture {
   display: grid;
@@ -52,14 +59,15 @@ img {
   padding-left: 80px;
 }
 
-article h2 {
+.title {
   color: black;
   -webkit-text-stroke: 1px blue;
   -webkit-text-fill-color: white;
   font-family: 'Impact', fantasy;
   display: flex;
   justify-content: center;
-  font-size: 2.5rem;
+  font-size: 4rem;
+  margin-right: 1.5rem;
 }
 .searchbutton input {
   outline: 3px solid #afeeee;
@@ -88,11 +96,20 @@ section ul {
   flex-direction: column;
   justify-content: center;
   margin-left: 26rem;
+  word-wrap: break-word;
 }
 section ul li {
   // border-bottom: 2px dotted #483d8b;
   margin-top: 10px;
   margin-right: -10rem;
+}
+section li {
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    color: white;
+  }
 }
 section li {
   width: 300px;
@@ -213,6 +230,9 @@ section p {
 .eventForm .note {
   font-size: 0.9rem;
   opacity: 0.6;
+}
+.eventForm::placeholder {
+  font-size: 30px;
 }
 .eventForm {
   display: flex;

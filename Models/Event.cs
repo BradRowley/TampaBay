@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace TampaBay.Models
@@ -17,5 +18,9 @@ namespace TampaBay.Models
         public int Cost { get; set; }
         public string Address { get; set; }
 
+
+        public List<Review> Reviews { get; set; }
     }
+
+
 }

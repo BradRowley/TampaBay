@@ -19,12 +19,14 @@ export function Homepage() {
   return (
     <>
     {/* need to improve header */}
-      <header>
-        <ul className="header">
+      <header className="header">
+        <div>
           <li>Welcome,</li>
-        </ul>
+        </div>
         <nav>
-        <div>Home</div>
+        <Link to="/">
+        <div> Home </div>
+        </Link>
           <Link to="/new">
         <div> Add Event </div>
         </Link>
@@ -68,7 +70,12 @@ export function Homepage() {
           <ul>
           {events.map((event)=> (
             <li key={event.id}>
-              <h4>{event.name}</h4>
+              <h4>
+              <Link to={`/events/${event.id}`}>
+                  {event.name}
+                </Link>
+                </h4>
+                
               <p>{event.category}</p>
               <address>{event.address}</address>
             </li>
