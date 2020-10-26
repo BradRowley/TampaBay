@@ -38,11 +38,11 @@ namespace TampaBay.Controllers
 
             if (filter == null)
             {
-                return await _context.Events.ToListAsync();
+                return await _context.Events.OrderBy(events => events.Name).Include(events => events.Reviews).ToListAsync();
             }
             else
             {
-                return await _context.Events.Where(events => events.Name.ToLower().Contains(filter.ToLower())).ToListAsync();
+                return await _context.Events.OrderBy(events => events.Name).Where(events => events.Name.Contains(filter)).ToListAsync();
             }
         }
 
