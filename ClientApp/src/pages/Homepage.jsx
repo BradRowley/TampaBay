@@ -38,10 +38,7 @@ export function Homepage() {
         <article>
           <h2 className="title" >Tampa Bay's Best</h2>
           <h3>
-            <div>
-              <label className="buttonlabel">Sign Out:</label>
-              <input className="button" type="button" value="+" />
-            </div>
+          <Link to="/signup">Sign Up</Link>
             <form className="searchbutton">
           <input
             type="text"

@@ -7,7 +7,7 @@ import { Switch, Route} from 'react-router-dom'
 import { Homepage } from './pages/Homepage'
 import { EventNew } from './pages/EventNew'
 import { OneEvent } from './pages/OneEvent'
-
+import {SignUp} from './pages/SignUp'
 
 export function App() {
   return (
@@ -21,6 +21,9 @@ export function App() {
       <Route exact path="/events/:id">
         <OneEvent/>
       </Route>
+      <Route exact path="/signup">
+      <SignUp/>
+         </Route>
     </Switch>
   )
 }
