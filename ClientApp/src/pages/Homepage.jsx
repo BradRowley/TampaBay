@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useReducer, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { getUser, isLoggedIn, logout } from '../auth'
 // import tampaBay1 from './pictures/tampa 1.jpg'
 // import tampaBay2 from './pictures/tampa 2.jpg'
 // import tampaBay3 from './pictures/tampa 3.jpeg'
@@ -16,12 +17,18 @@ export function Homepage() {
     }
     fixAsyncError()
   }, [searchingEvent,])
+  function handleLogout() {
+    logout()
+  
+    window.location.assign('/')
+  }
+  const user = getUser()
   return (
     <>
     {/* need to improve header */}
       <header className="header">
         <div>
-          <li>Welcome,</li>
+          {/* <li>Welcome {user.fullName}</li> */}
         </div>
         <nav>
         <Link to="/">
@@ -38,7 +45,13 @@ export function Homepage() {
         <article>
           <h2 className="title" >Tampa Bay's Best</h2>
           <h3>
-          <Link to="/signup">Sign Up</Link>
+          {isLoggedIn() || <Link to="/signup">Sign Up</Link>}
+          {isLoggedIn() || <Link to="/signin">Sign In</Link>}
+          {isLoggedIn() && (
+                <span className="link" onClick={handleLogout}>
+                  Sign out
+                </span>
+              )}
             <form className="searchbutton">
           <input
             type="text"

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
+import { authHeader } from '../auth'
 
 export function EventNew() {
 
@@ -34,11 +35,16 @@ const r = await fetch(
   '/api/Events',
   {
   method: 'POST',
-  headers: {'content-type': 'application/json'},
+  headers: {'content-type': 'application/json', ...authHeader()},
   body: JSON.stringify(newEvent)
 
 }
 )
+//have to be signed in to create new event
+if (r.status === 401) {
+  setError('Not Authorized')
+} else {
+  if (r.status === 400) {
 const json = await r.json()
 
 if(r.status === 400){
@@ -48,6 +54,7 @@ if(r.status === 400){
 
 history.push('/')
 }
+  }
 }
 
   return (

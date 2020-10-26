@@ -11,6 +11,7 @@ namespace TampaBay.Models
         public string BestWorst { get; set; }
         public string Body { get; set; }
         public DateTime CreatedAt { get; private set; } = DateTime.Now;
+        public int UserId { get; set; }
         public int EventId { get; set; }
     }
 }

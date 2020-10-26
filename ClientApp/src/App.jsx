@@ -8,7 +8,14 @@ import { Homepage } from './pages/Homepage'
 import { EventNew } from './pages/EventNew'
 import { OneEvent } from './pages/OneEvent'
 import {SignUp} from './pages/SignUp'
+import { SignOn } from './pages/SignOn'
+import {isLoggedIn, logout} from './auth'
 
+function handleLogout() {
+  logout()
+
+  window.location.assign('/')
+}
 export function App() {
   return (
     <Switch>
@@ -24,6 +31,9 @@ export function App() {
       <Route exact path="/signup">
       <SignUp/>
          </Route>
+         <Route exact path="/signin">
+      <SignOn/>
+         </Route> 
     </Switch>
   )
 }

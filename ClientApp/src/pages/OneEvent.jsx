@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom'
 export function OneEvent(){
   {
     const params = useParams()
-    const id = params.id
+    const id = Number(params.id)
 
   const [event, setEvent] = useState({
     id: 0,
@@ -15,6 +15,12 @@ export function OneEvent(){
     category: "string",
     cost: 0,
     address: "string",
+  })
+  const [newReview, setNewReview] = useState({
+    body: '',
+    bestWorst: '',
+    title:'',
+    eventId: id,
   })
   useEffect(() => {
     async function fetchEvent() {
@@ -26,6 +32,12 @@ export function OneEvent(){
   
     fetchEvent()
   }, [id])
+  function handleNewReviewFieldChange(event) {
+    const name = event.target.name
+    const value = event.target.value
+  
+    setNewReview({ ...newReview, [name]: value })
+  }
   return (
     <>
       <main>

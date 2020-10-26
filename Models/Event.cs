@@ -17,7 +17,7 @@ namespace TampaBay.Models
         public string Category { get; set; }
         public int Cost { get; set; }
         public string Address { get; set; }
-
+        public int UserId { get; set; }
 
         public List<Review> Reviews { get; set; }
     }
