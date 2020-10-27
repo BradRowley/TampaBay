@@ -28,7 +28,7 @@ export function Homepage() {
     {/* need to improve header */}
       <header className="header">
         <div>
-          {/* <li>Welcome {user.fullName}</li> */}
+         {isLoggedIn() && <li>Welcome {user.fullName}</li>}
         </div>
         <nav>
         <Link to="/">

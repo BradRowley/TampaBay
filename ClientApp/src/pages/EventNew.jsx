@@ -72,10 +72,10 @@ if (r.status === 401) {
       </header>
       <hr />
       <main>
-<h1>Add Event</h1>
-
+<h1 className="title1">Add Event</h1>
+<div className="eventFormDiv"> 
         <form onSubmit={submitButton}>
-         {error && <p>**The Name and Category sections are REQUIRED**</p>}
+         {error && <p> {error}</p>}
 
           <p className="eventForm">
             <label htmlFor="name">Name</label>
@@ -111,6 +111,7 @@ if (r.status === 401) {
             <input type="submit" value="Submit" />
           </p>
         </form>
+        </div>
       </main>
     </>
   )
