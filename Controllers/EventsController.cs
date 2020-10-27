@@ -44,7 +44,8 @@ namespace TampaBay.Controllers
             }
             else
             {
-                return await _context.Events.OrderBy(events => events.Name).Where(events => events.Name.Contains(filter)).ToListAsync();
+                return await _context.Events.Where(events => events.Name.Contains(filter) ||
+                                                                      events.Category.Contains(filter)).ToListAsync();
             }
         }
 

@@ -25,31 +25,6 @@ export function Homepage() {
   const user = getUser()
   return (
     <>
-    {/* need to improve header */}
-      {/* <header className="header">
-        <div>
-              {isLoggedIn() || <Link to="/signin">Sign In</Link>}
-              {isLoggedIn() || <Link to="/signup">Sign Up</Link>}
-              {isLoggedIn() && <Link to="/profile">Profile</Link>}
-              {isLoggedIn() && (
-                <span className="link" onClick={handleLogout}>
-                  Sign out
-                </span>
-              )}</div>
-        <div>
-         {isLoggedIn() && <li>Welcome {user.fullName}</li>}
-        </div>
-        <nav>
-        <Link to="/">
-        <div> Home </div>
-        </Link>
-          <Link to="/new">
-        <div> Add Event </div>
-        </Link>
-        <div>Budget</div>
-        </nav>
-        <hr />
-      </header> */}
       <main>
         <article>
           <h2 className="title" >Tampa Bay's Best</h2>
@@ -77,10 +52,18 @@ export function Homepage() {
               
               <select className="dropdown">
               <option value="">Select Category</option>
-                <option value="food">Food</option>
-                <option value="nightlife">Night Life</option>
-                <option value="outdoors">Outdoors</option>
-                <option value="other">Other</option>
+                <option value={searchingEvent} onClick={function (event) {
+              setSearchingEvent("Food")
+            }} > Food</option>
+                <option value={searchingEvent} onClick={function (event) {
+              setSearchingEvent("Night Life")
+            }}>Night Life</option>
+                <option value={searchingEvent} onClick={function (event) {
+              setSearchingEvent("Outdoors")
+            }}>Outdoors</option>
+                <option value={searchingEvent} onClick={function (event) {
+              setSearchingEvent("Other")
+            }}>Other</option>
               </select>
             </div>
           </h3>

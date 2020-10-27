@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { recordAuthentication } from '../auth'
 
 
@@ -39,9 +40,9 @@ async function handleSubmit(event) {
   return (
     <>
      <header>
-        <ul className="header">
-          <li>Welcome,</li>
-        </ul>
+     <Link to="/">
+        <div> Home </div>
+        </Link>
       </header>
     <main> 
           <h1 className="title1">Sign In!!!</h1>

@@ -60,17 +60,6 @@ if (r.status === 401) {
 }
   return (
     <>
-    <header className="header">
-        <ul>
-          <li>Welcome,</li>
-        </ul>
-        <nav>
-        <Link to="/">
-        <div> Home </div>
-        </Link>
-        </nav>
-      </header>
-      <hr />
       <main>
 <h1 className="title1">Add Event</h1>
 <div className="eventFormDiv"> 

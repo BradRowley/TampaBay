@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
 export function SignUp() {
   const history = useHistory()
@@ -41,9 +41,9 @@ function fieldChange(event){
   return (
     <>
      <header>
-        <ul className="header">
-          <li>Welcome,</li>
-        </ul>
+     <Link to="/">
+        <div> Home </div>
+        </Link>
       </header>
          <main>
           <h1>Sign Up!!!</h1>
