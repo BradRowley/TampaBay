@@ -26,7 +26,16 @@ export function Homepage() {
   return (
     <>
     {/* need to improve header */}
-      <header className="header">
+      {/* <header className="header">
+        <div>
+              {isLoggedIn() || <Link to="/signin">Sign In</Link>}
+              {isLoggedIn() || <Link to="/signup">Sign Up</Link>}
+              {isLoggedIn() && <Link to="/profile">Profile</Link>}
+              {isLoggedIn() && (
+                <span className="link" onClick={handleLogout}>
+                  Sign out
+                </span>
+              )}</div>
         <div>
          {isLoggedIn() && <li>Welcome {user.fullName}</li>}
         </div>
@@ -40,12 +49,12 @@ export function Homepage() {
         <div>Budget</div>
         </nav>
         <hr />
-      </header>
+      </header> */}
       <main>
         <article>
           <h2 className="title" >Tampa Bay's Best</h2>
           <h3>
-          {isLoggedIn() || <Link to="/signup">Sign Up</Link>}
+          {/* {isLoggedIn() || <Link to="/signup">Sign Up</Link>} */}
           {isLoggedIn() || <Link to="/signin">Sign In</Link>}
           {isLoggedIn() && (
                 <span className="link" onClick={handleLogout}>

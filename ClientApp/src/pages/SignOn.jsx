@@ -44,9 +44,11 @@ async function handleSubmit(event) {
         </ul>
       </header>
     <main> 
-          <h1>Sign In!!!</h1>
+          <h1 className="title1">Sign In!!!</h1>
+          <div className="eventFormDiv">
           <form onSubmit={handleSubmit}>
         {error && <p>{error}</p>}
+       
           <p className="form-input">
             <label htmlFor="name">Email</label>
             <input type="email" name="email" value={user.email} onChange={handleChange} />
@@ -59,6 +61,7 @@ async function handleSubmit(event) {
             <input type="submit" value="Submit" />
           </p>
         </form>
+        </div>
       {/* need to make footer for page */}
         <footer>
 
