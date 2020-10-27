@@ -1,6 +1,6 @@
 import React, { useEffect, useReducer, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { getUser, isLoggedIn, logout } from '../auth'
+import { getUser, isLoggedIn, logout, recordAuthentication } from '../auth'
 // import tampaBay1 from './pictures/tampa 1.jpg'
 // import tampaBay2 from './pictures/tampa 2.jpg'
 // import tampaBay3 from './pictures/tampa 3.jpeg'
@@ -19,7 +19,7 @@ export function Homepage() {
   }, [searchingEvent,])
   function handleLogout() {
     logout()
-  
+    
     window.location.assign('/')
   }
   const user = getUser()

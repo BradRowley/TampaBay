@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { authHeader } from '../auth'
+// import format from 'date-fns/format'
 
-
+const dateFormat = `EEEE, MMMM do, yyyy 'at' h:mm aaa`
 export function OneEvent(){
   {
     const params = useParams()
@@ -15,6 +17,7 @@ export function OneEvent(){
     category: "string",
     cost: 0,
     address: "string",
+    reviews: [],
   })
   const [newReview, setNewReview] = useState({
     body: '',
@@ -22,14 +25,13 @@ export function OneEvent(){
     title:'',
     eventId: id,
   })
+  async function fetchEvent() {
+    const response = await fetch(`/api/Events/${id}`)
+    const apiData = await response.json()
+
+    setEvent(apiData)
+  }
   useEffect(() => {
-    async function fetchEvent() {
-      const response = await fetch(`/api/Events/${id}`)
-      const apiData = await response.json()
-  console.log(apiData)
-      setEvent(apiData)
-    }
-  
     fetchEvent()
   }, [id])
   function handleNewReviewFieldChange(event) {
@@ -38,6 +40,26 @@ export function OneEvent(){
   
     setNewReview({ ...newReview, [name]: value })
   }
+  async function handleNewReviewSubmit(event) {
+    event.preventDefault()
+
+    const response = await fetch(`/api/Reviews`, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json', ... authHeader() },
+      body: JSON.stringify(newReview),
+      
+    })
+
+    setNewReview({
+      ...newReview,
+      body: '',
+    bestWorst: '',
+    title:'',
+    })
+
+    fetchEvent()
+  }
+
   return (
     <>
       <main>

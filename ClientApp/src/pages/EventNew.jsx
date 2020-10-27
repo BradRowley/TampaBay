@@ -44,19 +44,20 @@ const r = await fetch(
 if (r.status === 401) {
   setError('Not Authorized')
 } else {
+  const json = await r.json()
+
+  // If there is an error
   if (r.status === 400) {
-const json = await r.json()
+    // Get all the errors object values (the descriptions) and join them together
+    const message = Object.values(json.errors).join(' ')
 
-if(r.status === 400){
-  const message = Object.values(json.errors).join(' ')
-  setError(message)
-} else{
-
-history.push('/')
-}
+    // Update our error message
+    setError(message)
+  } else {
+    history.push('/')
   }
 }
-
+}
   return (
     <>
     <header className="header">

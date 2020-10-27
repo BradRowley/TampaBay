@@ -59,7 +59,7 @@ namespace TampaBay.Controllers
                 var response = new
                 {
                     status = 400,
-                    errors = new List<string>() { $"User does not exist" }
+                    errors = new List<string>() { "User does not exist" }
                 };
 
                 // Return our error with the custom response

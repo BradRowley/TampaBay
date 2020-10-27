@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { recordAuthentication } from '../auth'
 
 
 export function SignOn() {
@@ -31,7 +32,7 @@ async function handleSubmit(event) {
     setError(Object.values(apiResponse.errors).join(' '))
   } else {
     // TODO, record the login
-    // recordAuthentication(apiResponse)
+    recordAuthentication(apiResponse)
     window.location.assign('/')
   }
 }
@@ -42,7 +43,7 @@ async function handleSubmit(event) {
           <li>Welcome,</li>
         </ul>
       </header>
-    <main>
+    <main> 
           <h1>Sign In!!!</h1>
           <form onSubmit={handleSubmit}>
         {error && <p>{error}</p>}
