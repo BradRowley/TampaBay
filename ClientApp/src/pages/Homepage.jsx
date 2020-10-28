@@ -51,7 +51,9 @@ export function Homepage() {
               {/* <label for="cars">Category:</label> */}
               
               <select className="dropdown">
-              <option value="">Select Category</option>
+              <option value={searchingEvent} onClick={function (event) {
+              setSearchingEvent("")
+            }}>Select Category</option>
                 <option value={searchingEvent} onClick={function (event) {
               setSearchingEvent("Food")
             }} > Food</option>
