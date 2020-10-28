@@ -46,18 +46,19 @@ function fieldChange(event){
         </Link>
       </header>
          <main>
-          <h1>Sign Up!!!</h1>
+          <h1 className="title1">Sign Up!!!</h1>
+          <div className="eventFormDiv">
         <form onSubmit={submitButton}>
         {error && <p>{error}</p>}
-        <p className="form-input">
+        <p className="eventSignOn">
             <label htmlFor="name">Name</label>
             <input type="text" name="fullName" value={newUser.fullName} onChange={fieldChange}/>
           </p>
-          <p className="form-input">
+          <p className="eventSignOn">
             <label htmlFor="name">Email</label>
             <input type="email" name="email" value={newUser.email} onChange={fieldChange}/>
           </p>
-          <p className="form-input">
+          <p className="eventSignOn">
             <label htmlFor="password">Password</label>
             <input type="password" name="password" value={newUser.password} onChange={fieldChange}/>
           </p>
@@ -65,6 +66,7 @@ function fieldChange(event){
             <input type="submit" value="Submit" />
           </p>
         </form>
+        </div>
       </main> 
       
     </>
