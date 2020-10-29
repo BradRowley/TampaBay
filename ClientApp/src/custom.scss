@@ -45,25 +45,6 @@ header nav {
 hr {
   margin-bottom: 2rem;
 }
-.picture {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1px;
-  justify-self: center;
-  // border-radius: 8px;
-  // box-shadow: 4px 4px 1rem;
-}
-.picture2 {
-  display: none;
-}
-.picture3 {
-  display: none;
-}
-img {
-  width: 220px;
-  height: 150px;
-  padding-left: 80px;
-}
 
 .title {
   color: black;
@@ -82,7 +63,7 @@ img {
   font-family: 'Impact', fantasy;
   display: flex;
   justify-content: center;
-  font-size: 4rem;
+  font-size: 3rem;
 }
 .searchbutton input {
   outline: 3px solid #afeeee;
@@ -184,14 +165,44 @@ section h4 {
   .dropdown {
     height: 20px;
   }
+  .eventForm textarea {
+    width: 25.25rem;
+  }
+  .eventForm input {
+    width: 25rem;
+  }
+  .eventForm {
+    margin-right: 30px;
+  }
+  .title1 {
+    font-size: 3.5rem;
+  }
 }
 @media screen and (min-width: 760px) {
   header li {
     font-size: 14px;
   }
+  .eventForm textarea {
+    width: 30.25rem;
+  }
+  .eventForm input {
+    width: 30rem;
+  }
+  .eventForm {
+    margin-right: 10rem;
+  }
 }
 @media screen and (min-width: 1000px) {
   .title {
+    font-size: 4rem;
+  }
+  .eventForm textarea {
+    width: 32.25rem;
+  }
+  .eventForm input {
+    width: 32rem;
+  }
+  .title1 {
     font-size: 4rem;
   }
 }
@@ -205,10 +216,6 @@ section h4 {
   header li {
     font-size: 15px;
   }
-}
-.eventForm .note {
-  font-size: 0.9rem;
-  opacity: 0.6;
 }
 .eventForm::placeholder {
   font-size: 30px;
@@ -227,7 +234,7 @@ section h4 {
 .eventForm {
   display: flex;
   flex-direction: column;
-  width: 40rem;
+  width: 20rem;
 }
 .eventSignOn {
   display: flex;
