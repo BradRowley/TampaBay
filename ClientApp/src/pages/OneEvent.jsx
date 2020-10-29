@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
-import { authHeader } from '../auth'
+import { Link, useHistory, useParams } from 'react-router-dom'
+import { authHeader, getUser, isLoggedIn } from '../auth'
 // import format from 'date-fns/format'
 
 const dateFormat = `EEEE, MMMM do, yyyy 'at' h:mm aaa`
 export function OneEvent(){
   {
+    const history = useHistory()
+    const user = getUser()
+
     const params = useParams()
     const id = Number(params.id)
 
@@ -59,6 +62,18 @@ export function OneEvent(){
 
     fetchEvent()
   }
+  async function handleDelete(event) {
+    event.preventDefault()
+  
+    const response = await fetch(`/api/Events/${id}`, {
+      method: 'DELETE',
+      headers: { 'content-type': 'application/json', ...authHeader() },
+    })
+  
+    if (response.status === 200 || response.status === 204) {
+      history.push('/')
+    }
+  }
 
   return (
     <>
@@ -99,6 +114,11 @@ export function OneEvent(){
         <address>{event.address}</address>
         </article>
         {/* reviews */}
+        
+       {isLoggedIn() && event.userId === user.id && (
+        <button onClick={handleDelete}>Delete</button>
+        )}
+
         <section className="addReview">
         <Link to={`/events/${event.id}/reviews`}>
                   Reviews

@@ -69,6 +69,7 @@ const[error,setError] = useState()
 
     fetchEvent()
   }
+  
   }
 }
 

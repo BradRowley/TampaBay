@@ -11,6 +11,7 @@ import {SignUp} from './pages/SignUp'
 import { SignOn } from './pages/SignOn'
 import {getUser, isLoggedIn, logout} from './auth'
 import { Reviews } from './pages/Reviews'
+import { Edit } from './pages/Edit'
 
 function handleLogout() {
   logout()
@@ -25,7 +26,7 @@ export function App() {
         <div className="headerWelcome">
               {isLoggedIn() || <Link to="/signin">Sign In</Link>}
               {isLoggedIn() || <Link to="/signup">Sign Up</Link>}
-              {/* {isLoggedIn() && <Link to="/profile">Profile</Link>} */}
+              {isLoggedIn() && <Link to="/profile">Profile</Link>}
               {isLoggedIn() && (
                 <span className="link" onClick={handleLogout}>
                   SignOut
@@ -64,6 +65,10 @@ export function App() {
          <Route exact path="/events/:id/reviews">
       <Reviews/>
          </Route> 
+         <Route exact path="/profile">
+      <Edit/>
+         </Route> 
+
     </Switch>
     </>
   )

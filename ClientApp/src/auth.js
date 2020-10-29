@@ -78,7 +78,7 @@ export const updateUserAuth = updatedUser => {
   const auth = authFromStorage()
 
   auth.user.fullName = updatedUser.fullName
-  auth.user.photoURL = updatedUser.photoURL
+  auth.user.email = updatedUser.fullName
 
   recordAuthentication(auth)
 }
