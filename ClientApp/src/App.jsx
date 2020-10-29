@@ -42,7 +42,6 @@ export function App() {
           <Link to="/new">
         <div> Add Event </div>
         </Link>
-        <div>Budget</div>
         </nav>}
         <hr />
       </header>

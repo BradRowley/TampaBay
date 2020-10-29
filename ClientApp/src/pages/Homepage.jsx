@@ -28,14 +28,14 @@ export function Homepage() {
       <main>
         <article>
           <h2 className="title" >Tampa Bay's Best</h2>
-          <h3>
+          <h3 className="eventFormDiv">
           {/* {isLoggedIn() || <Link to="/signup">Sign Up</Link>} */}
-          {isLoggedIn() || <Link to="/signin">Sign In</Link>}
+          {/* {isLoggedIn() || <Link to="/signin">Sign In</Link>}
           {isLoggedIn() && (
                 <span className="link" onClick={handleLogout}>
                   Sign out
                 </span>
-              )}
+              )} */}
             <form className="searchbutton">
           <input
             type="text"
@@ -70,7 +70,7 @@ export function Homepage() {
             </div>
           </h3>
         </article>
-        <section>
+        <section className="eventFormDivv">
           <ul>
           {events.map((event)=> (
             <li key={event.id}>
@@ -87,20 +87,6 @@ export function Homepage() {
           </ul>
         </section>
       </main>
-      {/* <footer>
-      <article className="headerpictures">
-          <h1>
-            <img className="picture" src={tampaBay2} alt="Tampa Picture2" />
-          </h1>
-          <h1>
-            <img className="picture2" src={tampaBay1} alt="Tampa Picture1" />
-          </h1>
-          <h1>
-            <img className="picture3" src={tampaBay3} alt="Tampa Picture3" />
-          </h1>
-        </article>
-
-      </footer> */}
     </>
   )
 }
