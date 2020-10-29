@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { authHeader } from '../auth'
 // import format from 'date-fns/format'
 
@@ -62,35 +62,52 @@ export function OneEvent(){
 
   return (
     <>
-      <main>
-        <nav>
-          <a href="/">
-            <i className="fa fa-home"></i>
-          </a>
-          {/* <label> Name</label> */}
-          <h2>{event.name} </h2>
-        </nav>
+      <main className="oneEvent">
+        <div>
+          <article className="eventOne">
+          <h2 className="eventTitle">{event.name} </h2>
         {/* <hr /> */}
-        <label> Category</label>
+        </article>
+        <article className="eventOne">
+        <label className="labelTitle"> Category:</label>
         <p>
         {event.category}
         </p>
+        </article>
         {/* <hr /> */}
-        <label> Description</label>
+        <article className="eventOne">
+        <label className="labelTitle"> Description:</label>
         <p>
           {event.description}
         </p>
+        </article>
+        <article className="eventOne">
         {/* <hr /> */}
-        <label> Requirements</label>
+        <label className="labelTitle"> Event Requirements:</label>
         <p>{event.requirements}</p>
+        </article>
+        <article className="eventOne">
         {/* <hr /> */}
-        <label> Average cost per person</label>
+        <label className="labelTitle"> Average cost per person:</label>
         <p>
           ${event.cost}
         </p>
-        <label> Address</label>
+        </article>
+        <article className="eventOne">
+        <label className="labelTitle"> Address:</label>
         <></>
         <address>{event.address}</address>
+        </article>
+        {/* reviews */}
+        <section className="addReview">
+        <Link to={`/events/${event.id}/reviews`}>
+                  Reviews
+                </Link>
+                <Link to={`/events/${event.id}/reviews`}>
+                  Add Review
+                </Link>
+        </section>
+        </div>
       </main>
     </>
   )

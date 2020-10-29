@@ -45,7 +45,7 @@ namespace TampaBay.Controllers
             else
             {
                 return await _context.Events.Where(events => events.Name.Contains(filter) ||
-                                                                      events.Category.Contains(filter)).ToListAsync();
+                                                                      events.Category.Contains(filter)).Include(events => events.Reviews).ToListAsync();
             }
         }
 
@@ -60,8 +60,11 @@ namespace TampaBay.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Event>> GetEvent(int id)
         {
-            // Find the @event in the database using `FindAsync` to look it up by id
-            var @event = await _context.Events.FindAsync(id);
+            // Find the restaurant in the database using Include to ensure we have the associated reviews
+            var @event = await _context.Events.
+                                    Include(@event => @event.Reviews).
+                                    ThenInclude(@event => @event.User).
+                                    Where(@event => @event.Id == id).FirstOrDefaultAsync();
 
             // If we didn't find anything, we receive a `null` in return
             if (@event == null)

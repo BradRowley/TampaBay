@@ -26,6 +26,10 @@ header div {
   list-style-type: none;
   margin-bottom: 10px;
 }
+.headerWelcome {
+  display: flex;
+  justify-content: space-between;
+}
 header nav {
   display: flex;
   justify-content: flex-end;
@@ -272,9 +276,38 @@ section p {
 hr {
   color: blue;
 }
-//   max-width: 475px;
-//   margin-left: 5rem;
-//
+.eventOne {
+  display: flex;
+  flex-direction: column;
+}
+.oneEvent {
+  display: flex;
+  justify-content: center;
+}
+.addReview {
+  margin-top: 50px;
+}
+.addReview {
+  a:link,
+  a:visited,
+  a:focus,
+  a:hover,
+  a:active {
+    color: white;
+  }
+}
+.labelTitle {
+  color: #888888;
+  text-shadow: 2px 0 #888888;
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-decoration: underline blue;
+}
+.eventTitle {
+  font-size: 2.5rem;
+  color: #afeeee;
+  text-shadow: 3px 0 blue;
+}
 .form-input input[type='text'],
 // .form-input input[type='email'],
 // .form-input input[type='password'],
