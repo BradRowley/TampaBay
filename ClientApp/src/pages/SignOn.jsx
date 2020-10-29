@@ -39,7 +39,7 @@ async function handleSubmit(event) {
 }
   return (
     <>
-     <header>
+     <header className="home">
      <Link to="/">
         <div> Home </div>
         </Link>

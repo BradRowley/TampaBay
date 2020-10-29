@@ -71,9 +71,9 @@ export function Homepage() {
           </h3>
         </article>
         <section className="eventFormDivv">
-          <ul>
+          <ul >
           {events.map((event)=> (
-            <li key={event.id}>
+            <li className="listOfEvents" key={event.id}>
               <h4>
               <Link to={`/events/${event.id}`}>
                   {event.name}

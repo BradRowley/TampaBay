@@ -23,28 +23,29 @@ export function App() {
   return (
     <>
     <header className="header">
-        <div className="headerWelcome">
-              {isLoggedIn() || <Link to="/signin">Sign In</Link>}
-              {isLoggedIn() || <Link to="/signup">Sign Up</Link>}
-              {isLoggedIn() && <Link to="/profile">Profile</Link>}
+        <div className="headerWelcome">        
+         {isLoggedIn() && <li> Welcome {user.fullName},</li>}
+         {isLoggedIn() || <Link to="/signin">Sign In</Link>}
+              {isLoggedIn() || <Link className="signUp" to="/signup">Sign Up</Link>}
               {isLoggedIn() && (
-                <span className="link" onClick={handleLogout}>
+                <span className="logout" onClick={handleLogout}>
                   SignOut
                 </span>
               )}
-        
-         {isLoggedIn() && <li> Welcome {user.fullName},</li>}
-        </div>
+
         {isLoggedIn() && <nav>
         <Link to="/"> 
-        <div> Home </div>
+        <div className="headerHome"> Home </div>
         </Link>
+        <Link to="/profile">Profile</Link>
           <Link to="/new">
-        <div> Add Event </div>
+        <div className="headerEvent"> Add Event </div>
         </Link>
         </nav>}
-        <hr />
+        {/* <hr /> */}
+        </div>
       </header>
+      <hr/>
     <Switch>
       <Route exact path="/">
         <Homepage />
