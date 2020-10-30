@@ -77,6 +77,11 @@ export function OneEvent(){
 
   return (
     <>
+    {isLoggedIn() || <header className="home">
+     <Link to="/">
+        <div> Home </div>
+        </Link>
+      </header>}
       <main className="oneEvent">
         <div>
           <article className="eventOne">
@@ -120,14 +125,14 @@ export function OneEvent(){
         )}
    </div>
       </main>
-        <section className="addReview">
+      {isLoggedIn() &&<section className="addReview">
         <Link className="reviews" to={`/events/${event.id}/reviews`}>
                   Reviews
                 </Link>
                 <Link to={`/events/${event.id}/reviews`}>
                   Add Review
                 </Link>
-        </section>
+        </section>}
       
     </>
   )

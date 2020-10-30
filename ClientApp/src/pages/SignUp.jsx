@@ -46,7 +46,7 @@ function fieldChange(event){
         </Link>
       </header>
          <main>
-          <h1 className="title1">Sign Up!!!</h1>
+          <h1 className="title1">Sign Up</h1>
           <div className="eventFormDiv">
         <form onSubmit={submitButton}>
         {error && <p>{error}</p>}

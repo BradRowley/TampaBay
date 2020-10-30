@@ -16,7 +16,7 @@ export function Edit() {
     password: '',
   })
 
-  function handleStringFieldChange(event) {
+  function handleFieldChange(event) {
     const value = event.target.value
     const fieldName = event.target.name
 
@@ -25,7 +25,7 @@ export function Edit() {
     setUpdatedUser(newUpdatedUser)
   }
 
-  async function handleFormSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault()
 
     const response = await fetch(`/api/Users/${user.id}`, {
@@ -46,47 +46,50 @@ export function Edit() {
 
 
   return (
-    <main className="page">
-      <nav>
-        <Link to="/">
-          <i className="fa fa-home"></i>
+    <main>
+      
+      <header className="home">
+     <Link to="/">
+        <div> Home </div>
         </Link>
-        <h2>Edit Profile</h2>
-      </nav>
-
-      <form onSubmit={handleFormSubmit}>
+      </header>
+        <h2 className="title1">Edit Profile</h2>
+     
+      <div className="eventFormDiv">
+      <form onSubmit={handleSubmit}>
         {error && <p>{error}</p>}
-        <p className="form-input">
+        <p className="eventSignOn">
           <label htmlFor="fullName">Name</label>
           <input
             type="text"
             name="fullName"
             value={updatedUser.fullName}
-            onChange={handleStringFieldChange}
+            onChange={handleFieldChange}
           />
         </p>
-        <p className="form-input">
+        <p className="eventSignOn">
           <label htmlFor="name">Email</label>
           <input
             type="email"
             name="email"
             value={updatedUser.email}
-            onChange={handleStringFieldChange}
+            onChange={handleFieldChange}
           />
         </p>
-        <p className="form-input">
+        <p className="eventSignOn">
           <label htmlFor="password">Password</label>
           <input
             type="password"
             name="password"
             value={updatedUser.password}
-            onChange={handleStringFieldChange}
+            onChange={handleFieldChange}
           />
         </p>
         <p>
           <input type="submit" value="Submit" />
         </p>
       </form>
+      </div>
     </main>
   )
 }

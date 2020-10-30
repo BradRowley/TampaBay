@@ -81,7 +81,7 @@ const[error,setError] = useState()
         {event.reviews.map((review) => (
           <li key={review.id}>
             <div className="wroteBy">
-             Wrote by:: {review.user.fullName}
+             Wrote by: {review.user.fullName}
             </div>
             <label className="reviewsLabel">Title</label>
             <div className="answers">{review.title}</div>
