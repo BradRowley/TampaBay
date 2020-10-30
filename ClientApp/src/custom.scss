@@ -152,14 +152,18 @@ section h4 {
 .eventFormDiv {
   display: flex;
   justify-content: center;
-  // margin: 3rem 2rem;
+  list-style-type: none;
 }
+
 .eventFormDivv {
   display: flex;
   justify-content: center;
   margin-right: 2rem;
+  list-style-type: none;
 }
-
+ul {
+  list-style-type: none;
+}
 .eventForm {
   display: flex;
   flex-direction: column;
@@ -181,6 +185,9 @@ hr {
   background-color: #f0ffff;
   margin: 0.5rem 2rem;
   margin-top: 2rem;
+  box-shadow: 4px 3px 5px 6px #ccc;
+  padding: 5px;
+  padding-bottom: 15px;
 }
 .eventOne {
   display: flex;
@@ -189,6 +196,8 @@ hr {
 }
 .addReview {
   margin-top: 50px;
+  display: flex;
+  justify-content: center;
 }
 .addReview {
   a:link,
@@ -196,8 +205,19 @@ hr {
   a:focus,
   a:hover,
   a:active {
-    color: black;
+    color: #f0fff0;
   }
+}
+.reviewsForm {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  word-wrap: break-word;
+  font-size: 8px;
+  // padding-right: 6px;
+}
+.reviews {
+  margin-right: 20px;
 }
 .labelTitle {
   color: #888888;
@@ -206,10 +226,32 @@ hr {
   font-weight: bold;
   text-decoration: underline blue;
 }
+.wroteBy {
+  padding-bottom: 10px;
+}
+.reviewsTitle {
+  font-size: 13px;
+  text-decoration: underline red;
+}
+.reviewsLabel {
+  font-size: 10px;
+  text-decoration: underline blue;
+  margin-top: 10px;
+}
+.answers {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.eventFormR {
+  display: flex;
+  flex-direction: column;
+  width: 10rem;
+  padding-left: 3px;
+}
 .eventTitle {
   font-size: 2rem;
-  color: blue;
-  text-shadow: 3px 0 #888888;
+  color: #808080;
+  text-shadow: 3px 0 blue;
 }
 .listOfEvents:hover {
   background-color: #900c3f;
@@ -218,7 +260,7 @@ hr {
 li:hover:before {
   color: white;
 }
-
+//MEDIA FROM NOW ON//
 @media screen and (min-width: 450px) {
   .logout {
     margin-left: 4px;
@@ -232,6 +274,19 @@ li:hover:before {
   header nav {
     margin-left: 13.5rem;
   }
+  .eventFormR {
+    width: 13rem;
+    font-size: 12px;
+  }
+  .reviewsLabel {
+    font-size: 12px;
+  }
+  .reviewsTitle {
+    font-size: 16px;
+  }
+  .answers {
+    font-size: 9px;
+  }
 }
 @media screen and (min-width: 550px) {
   header nav {
@@ -241,8 +296,22 @@ li:hover:before {
     margin: 0.5rem 5rem;
     margin-top: 2rem;
   }
+  .eventFormR {
+    width: 15rem;
+  }
+  .reviewsLabel {
+    font-size: 13px;
+  }
+  .reviewsTitle {
+    font-size: 18px;
+  }
+  .answers {
+    font-size: 9px;
+  }
 }
-
+address {
+  padding-top: 10px;
+}
 @media screen and (min-width: 650px) {
   .eventFormDivv {
     display: flex;
@@ -298,6 +367,21 @@ li:hover:before {
     margin: 0.5rem 7rem;
     margin-top: 2rem;
   }
+  .eventFormR {
+    width: 18rem;
+  }
+  .reviewsLabel {
+    font-size: 15px;
+  }
+  .reviewsTitle {
+    font-size: 18px;
+  }
+  .answers {
+    font-size: 10px;
+  }
+  .wroteBy {
+    font-size: 11px;
+  }
 }
 @media screen and (min-width: 760px) {
   .headerWelcome {
@@ -319,6 +403,18 @@ li:hover:before {
     margin: 0.5rem 9rem;
     margin-top: 2rem;
   }
+  .eventFormR {
+    width: 22rem;
+  }
+  .reviewsLabel {
+    font-size: 16px;
+  }
+  .reviewsTitle {
+    font-size: 20px;
+  }
+  .answers {
+    font-size: 11px;
+  }
 }
 @media screen and (min-width: 900px) {
   header nav {
@@ -327,6 +423,18 @@ li:hover:before {
   .oneEvent {
     margin: 0.5rem 11rem;
     margin-top: 2rem;
+  }
+  .eventFormR {
+    width: 27rem;
+  }
+  .reviewsLabel {
+    font-size: 17px;
+  }
+  .reviewsTitle {
+    font-size: 22px;
+  }
+  .answers {
+    font-size: 12px;
   }
 }
 
@@ -350,6 +458,18 @@ li:hover:before {
     margin: 0.5rem 13rem;
     margin-top: 2rem;
   }
+  .eventFormR {
+    width: 31rem;
+  }
+  .reviewsLabel {
+    font-size: 18px;
+  }
+  .reviewsTitle {
+    font-size: 24px;
+  }
+  .answers {
+    font-size: 13px;
+  }
 }
 @media screen and (min-width: 1140px) {
   header nav {
@@ -358,6 +478,19 @@ li:hover:before {
   .oneEvent {
     margin: 0.5rem 15rem;
     margin-top: 2rem;
+  }
+  .eventFormR {
+    width: 34rem;
+    padding-right: 3px;
+  }
+  .reviewsLabel {
+    font-size: 19px;
+  }
+  .reviewsTitle {
+    font-size: 25px;
+  }
+  .answers {
+    font-size: 13px;
   }
 }
 @media screen and (min-width: 1250px) {
@@ -371,6 +504,19 @@ li:hover:before {
     margin: 0.5rem 17rem;
     margin-top: 2rem;
   }
+  .eventFormR {
+    width: 38rem;
+    padding-right: 5px;
+  }
+  .reviewsLabel {
+    font-size: 19px;
+  }
+  .reviewsTitle {
+    font-size: 25px;
+  }
+  .answers {
+    font-size: 13px;
+  }
 }
 
 @media screen and (min-width: 1300px) {
@@ -383,6 +529,19 @@ li:hover:before {
   .oneEvent {
     margin: 0.5rem 19rem;
     margin-top: 2rem;
+  }
+  .eventFormR {
+    width: 40rem;
+    padding-right: 7px;
+  }
+  .reviewsLabel {
+    font-size: 19px;
+  }
+  .reviewsTitle {
+    font-size: 25px;
+  }
+  .answers {
+    font-size: 13px;
   }
 }
 @media screen and (min-width: 1400px) {

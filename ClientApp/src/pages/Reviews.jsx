@@ -36,13 +36,13 @@ const[error,setError] = useState()
   useEffect(() => {
     fetchEvent()
   }, [id])
-  function handleNewReviewFieldChange(event) {
+  function handleFieldChange(event) {
     const name = event.target.name
     const value = event.target.value
   
     setNewReview({ ...newReview, [name]: value })
   }
-  async function handleNewReviewSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault()
 
     const response = await fetch(`/api/Reviews`, {
@@ -75,63 +75,66 @@ const[error,setError] = useState()
 
   return (
     <>
-    <main>
-    <ul className="reviews">
+    <main className="reviewsForm">
+    {event.reviews.length > 0 &&<ul >
+     <h2 className="reviewsTitle" >Reviews</h2>
         {event.reviews.map((review) => (
           <li key={review.id}>
-            <div className="author">
-              {/* {review.user.fullName} said: <em>{review.summary}</em> */}
+            <div className="wroteBy">
+             Wrote by:: {review.user.fullName}
             </div>
-            <div>{review.title}</div>
-            <div className="body">
-              <p>{review.body}</p>
+            <label className="reviewsLabel">Title</label>
+            <div className="answers">{review.title}</div>
+            <div >
+            <label className="reviewsLabel" >Review</label>
+              <p className="answers">{review.body}</p>
             </div>
-            <div>{review.bestWorst}</div>
+            <label className="reviewsLabel">Best/Worst Experience</label>
+            <div className="answers">{review.bestWorst}</div>
             <div>
               <time>{review.createdAt}</time>
             </div>
           </li>
         ))}
-      </ul>
+      </ul>}
 
       {isLoggedIn() && (
         <>
-          <h3>Enter your own review</h3>
-          <form onSubmit={handleNewReviewSubmit}>
+          {/* <h3 >Enter your own review</h3> */}
+          <form  onSubmit={handleSubmit}>
             {error && <p>{error}</p>}
-            <p className="form-input">
+            <h3 className="reviewsTitle">Enter your own review</h3>
+            <p className="eventFormR">
               <label htmlFor="title">Title of Review</label>
               <input
                 type="text"
                 name="title"
                 value={newReview.title}
-                onChange={handleNewReviewFieldChange}
+                onChange={handleFieldChange}
               />
               <span >
-                Enter a brief summary of your review. Example:{' '}
-                <strong>Great food, good prices.</strong>
+                Enter a title for your review
               </span>
             </p>
-            <p className="form-input">
+            <p className="eventFormR">
               <label htmlFor="body">Review</label>
               <textarea
                 type="text"
                 name="body"
                 value={newReview.body}
-                onChange={handleNewReviewFieldChange}
+                onChange={handleFieldChange}
               ></textarea>
             </p>
-            <p className="form-input">
+            <p className="eventFormR">
               <label htmlFor="bestWorst">Best / Worst</label>
               <textarea
                 type="text"
                 name="bestWorst"
                 value={newReview.bestWorst}
-                onChange={handleNewReviewFieldChange}
+                onChange={handleFieldChange}
               ></textarea>
               <span >
-                Enter a brief summary of your review. Example:{' '}
-                <strong>Great food, good prices.</strong>
+                Enter best and worst thing about experience
               </span>
             </p>
             

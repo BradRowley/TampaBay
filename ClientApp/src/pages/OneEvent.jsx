@@ -118,17 +118,17 @@ export function OneEvent(){
        {isLoggedIn() && event.userId === user.id && (
         <button onClick={handleDelete}>Delete</button>
         )}
-
+   </div>
+      </main>
         <section className="addReview">
-        <Link to={`/events/${event.id}/reviews`}>
+        <Link className="reviews" to={`/events/${event.id}/reviews`}>
                   Reviews
                 </Link>
                 <Link to={`/events/${event.id}/reviews`}>
                   Add Review
                 </Link>
         </section>
-        </div>
-      </main>
+      
     </>
   )
 }
