@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { authHeader, isLoggedIn } from '../auth'
-// import format from 'date-fns/format'
+import format from 'date-fns/format'
 
 const dateFormat = `EEEE, MMMM do, yyyy 'at' h:mm aaa`
 export function Reviews(){
@@ -92,7 +92,7 @@ const[error,setError] = useState()
             <label className="reviewsLabel">Best/Worst Experience</label>
             <div className="answers">{review.bestWorst}</div>
             <div>
-              <time>{review.createdAt}</time>
+            <time className="answers">{format(new Date(review.createdAt), dateFormat)}</time>
             </div>
           </li>
         ))}
