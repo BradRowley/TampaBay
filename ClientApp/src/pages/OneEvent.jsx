@@ -22,12 +22,7 @@ export function OneEvent(){
     address: "string",
     reviews: [],
   })
-  const [newReview, setNewReview] = useState({
-    body: '',
-    bestWorst: '',
-    title:'',
-    eventId: id,
-  })
+ 
   async function fetchEvent() {
     const response = await fetch(`/api/Events/${id}`)
     const apiData = await response.json()
@@ -37,31 +32,7 @@ export function OneEvent(){
   useEffect(() => {
     fetchEvent()
   }, [id])
-  function handleNewReviewFieldChange(event) {
-    const name = event.target.name
-    const value = event.target.value
-  
-    setNewReview({ ...newReview, [name]: value })
-  }
-  async function handleNewReviewSubmit(event) {
-    event.preventDefault()
 
-    const response = await fetch(`/api/Reviews`, {
-      method: 'POST',
-      headers: { 'content-type': 'application/json', ... authHeader() },
-      body: JSON.stringify(newReview),
-      
-    })
-
-    setNewReview({
-      ...newReview,
-      body: '',
-    bestWorst: '',
-    title:'',
-    })
-
-    fetchEvent()
-  }
   async function handleDelete(event) {
     event.preventDefault()
   
