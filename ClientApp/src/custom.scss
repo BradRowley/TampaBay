@@ -181,7 +181,6 @@ hr {
 .oneEvent {
   display: flex;
   justify-content: center;
-  // border: thick solid white;
   background-color: #f0ffff;
   margin: 0.5rem 2rem;
   margin-top: 2rem;
@@ -228,6 +227,7 @@ hr {
 }
 .wroteBy {
   padding-bottom: 10px;
+  padding-top: 3px;
 }
 .reviewsTitle {
   font-size: 13px;
