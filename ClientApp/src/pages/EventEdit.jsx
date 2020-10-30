@@ -43,8 +43,7 @@ function fieldChangeNumber(event){
 }
 async function submitButton(event){
  event.preventDefault()
-const r = await fetch(
-  '/api/Events',
+const r = await fetch(`/api/Events/${id}`,
   {
   method: 'PUT',
   headers: {'content-type': 'application/json', ...authHeader()},
@@ -56,7 +55,6 @@ const r = await fetch(
 if (r.status === 401) {
   setError('Not Authorized')
 } else {
-
   // If there is an error
   if (r.status === 400) {
     const json = await r.json()
