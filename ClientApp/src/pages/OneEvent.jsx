@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useHistory, useParams } from 'react-router-dom'
 import { authHeader, getUser, isLoggedIn } from '../auth'
-// import format from 'date-fns/format'
 
-const dateFormat = `EEEE, MMMM do, yyyy 'at' h:mm aaa`
 export function OneEvent(){
   {
     const history = useHistory()
@@ -93,6 +91,13 @@ export function OneEvent(){
         
        {isLoggedIn() && event.userId === user.id && (
         <button onClick={handleDelete}>Delete</button>
+        )}
+        {isLoggedIn() && event.userId === user.id && (
+        <p>
+       <Link to={`/events/${id}/edit`}>
+        Edit
+       </Link>
+      </p>
         )}
    </div>
       </main>

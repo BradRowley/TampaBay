@@ -89,8 +89,23 @@ namespace TampaBay.Controllers
         // new values for the record.
         //
         [HttpPut("{id}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public async Task<IActionResult> PutEvent(int id, Event @event)
         {
+            // Find this restaurant by looking for the specific id
+            var eventBelongsToUser = await _context.Events.AnyAsync(@event => @event.Id == id && @event.UserId == GetCurrentUserId());
+            if (!eventBelongsToUser)
+            {
+                // Make a custom error response
+                var response = new
+                {
+                    status = 401,
+                    errors = new List<string>() { "Not Authorized" }
+                };
+
+                // Return our error with the custom response
+                return Unauthorized(response);
+            }
             // If the ID in the URL does not match the ID in the supplied request body, return a bad request
             if (id != @event.Id)
             {

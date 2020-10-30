@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { authHeader, isLoggedIn } from '../auth'
+import { useHistory, useParams } from 'react-router-dom'
+import { authHeader, getUser, isLoggedIn } from '../auth'
 import format from 'date-fns/format'
 
 const dateFormat = `EEEE, MMMM do, yyyy 'at' h:mm aaa`
 export function Reviews(){
   
-    const params = useParams()
+  const history = useHistory()
+  const user = getUser()
+  const params = useParams()
     const id = Number(params.id)
   
 const[error,setError] = useState()
@@ -69,8 +71,17 @@ const[error,setError] = useState()
 
     fetchEvent()
   }
-  
   }
+}
+async function handleDeleteReview(event, reviewId) {
+  event.preventDefault()
+
+  await fetch(`/api/Reviews/${reviewId}`, {
+    method: 'DELETE',
+    headers: { 'content-type': 'application/json', ...authHeader() },
+  })
+
+  fetchEvent()
 }
 
   return (
@@ -94,6 +105,14 @@ const[error,setError] = useState()
             <div>
             <time className="answers">{format(new Date(review.createdAt), dateFormat)}</time>
             </div>
+           {isLoggedIn() && review.user.id === user.id && (
+           <div>
+            <button onClick={event => handleDeleteReview(event, review.id)}>
+            Delete
+           </button>
+           </div>
+           )
+          }
           </li>
         ))}
       </ul>}

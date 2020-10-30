@@ -12,6 +12,7 @@ import { SignOn } from './pages/SignOn'
 import {getUser, isLoggedIn, logout} from './auth'
 import { Reviews } from './pages/Reviews'
 import { Edit } from './pages/Edit'
+import { EventEdit } from './pages/EventEdit'
 
 function handleLogout() {
   logout()
@@ -55,6 +56,9 @@ export function App() {
       </Route>
       <Route exact path="/events/:id">
         <OneEvent/>
+      </Route>
+      <Route exact path="/events/:id/edit">
+        <EventEdit/>
       </Route>
       <Route exact path="/signup">
       <SignUp/>
